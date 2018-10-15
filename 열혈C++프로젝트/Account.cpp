@@ -1,5 +1,5 @@
 // Account class Implementation
-// ver 0.3
+// ver 0.4
 // Last Update 2018.10.15
 
 
@@ -27,6 +27,7 @@ Account::Account(const Account& other)
 	strcpy_s(this->name, sizeof(char)*(strlen(other.name) + 1), other.name);
 }
 
+
 bool Account::Withdraw(int value)
 {
 	if (value > balance)
@@ -37,7 +38,7 @@ bool Account::Withdraw(int value)
 }
 
 
-void Account::ShowAccountInfo()
+void Account::ShowAccountInfo() const
 {
 	std::cout << "°èÁÂID: " << accountID << std::endl;
 	std::cout << "ÀÌ  ¸§: " << name << std::endl;
