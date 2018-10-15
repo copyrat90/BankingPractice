@@ -1,5 +1,5 @@
 // Account class
-// ver 0.2
+// ver 0.3
 // Last Update 2018.10.15
 
 
@@ -12,6 +12,7 @@ class Account
 {
 public:
 	Account(int accountID, char* name, int balance = 0);
+	Account(const Account& other);
 
 	void ShowAccountInfo();
 

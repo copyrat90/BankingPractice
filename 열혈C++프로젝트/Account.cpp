@@ -1,5 +1,5 @@
 // Account class Implementation
-// ver 0.2
+// ver 0.3
 // Last Update 2018.10.15
 
 
@@ -19,6 +19,13 @@ Account::Account(int accountID, char* name, int balance)
 	strcpy_s(this->name, sizeof(char) * (strlen(name) + 1), name);
 }
 
+
+Account::Account(const Account& other)
+	:accountID(other.accountID), balance(other.balance)
+{
+	this->name = new char[strlen(other.name) + 1];
+	strcpy_s(this->name, sizeof(char)*(strlen(other.name) + 1), other.name);
+}
 
 bool Account::Withdraw(int value)
 {
