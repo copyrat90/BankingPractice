@@ -1,4 +1,4 @@
-// Account class
+// Account class (Entity Class)
 // ver 0.4
 // Last Update 2018.10.15
 
