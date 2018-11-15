@@ -153,11 +153,15 @@
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="AccountHandler.h" />
+    <ClInclude Include="HighCreditAccount.h" />
+    <ClInclude Include="NormalAccount.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="AccountHandler.cpp" />
+    <ClCompile Include="HighCreditAccount.cpp" />
+    <ClCompile Include="NormalAccount.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

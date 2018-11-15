@@ -1,6 +1,6 @@
 // Account class (Entity Class)
-// ver 0.4
-// Last Update 2018.10.15
+// ver 0.5
+// Last Update 2018.11.15
 
 
 #ifndef ACCOUNT_H
@@ -18,12 +18,12 @@ public:
 
 	int GetID() const { return accountID; }
 
-	void Deposit(int value) { balance += value; }
+	virtual void Deposit(int value) { balance += value; }
 	bool Withdraw(int value);
 
-	~Account() { delete[] name;	}
+	virtual ~Account() { delete[] name;	}
 
-private:
+protected:
 	int accountID;
 	char *name;
 	int balance;
