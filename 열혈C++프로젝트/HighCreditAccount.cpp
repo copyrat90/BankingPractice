@@ -9,7 +9,14 @@
 
 HighCreditAccount::HighCreditAccount(int accountID, char* name, int balance, double rate, int cr)
 	:NormalAccount(accountID, name, balance, rate), creditRating(cr)
-{ }
+{ 
+	if (creditRating <= 0 || creditRating >= 4)
+	{
+		std::cout << "Error in HighCreditAccount::HighCreditAccount() : Invalid creditRating" << std::endl
+			<< "creditRating was set to default value(1) instead." << std::endl;
+		creditRating = 1;
+	}
+}`
 
 
 void HighCreditAccount::Deposit(int value)
