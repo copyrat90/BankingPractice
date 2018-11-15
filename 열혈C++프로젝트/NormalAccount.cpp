@@ -15,3 +15,10 @@ void NormalAccount::Deposit(int value)
 	balance += static_cast<int>(interestRate * balance);
 	balance += value;
 }
+
+
+void NormalAccount::ShowAccountInfo() const
+{
+	Account::ShowAccountInfo();
+	std::cout << "ÀÌÀÚÀ²: " << interestRate << std::endl;
+}

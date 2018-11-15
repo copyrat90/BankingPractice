@@ -14,7 +14,7 @@ public:
 	Account(int accountID, char* name, int balance = 0);
 	Account(const Account& other);
 
-	void ShowAccountInfo() const;
+	virtual void ShowAccountInfo() const;
 
 	int GetID() const { return accountID; }
 

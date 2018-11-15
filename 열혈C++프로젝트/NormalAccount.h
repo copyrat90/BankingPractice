@@ -12,6 +12,7 @@ class NormalAccount : public Account
 {
 public:
 	NormalAccount(int accountID, char* name, int balance = 0, double rate = 0);
+	virtual void ShowAccountInfo() const;
 	virtual void Deposit(int value);
 protected:
 	double interestRate;

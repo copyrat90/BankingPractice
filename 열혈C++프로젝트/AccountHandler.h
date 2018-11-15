@@ -1,12 +1,14 @@
 // AccountHandler class (Control Class)
-// ver 1.0
-// Last Update 2018.11.6
+// ver 1.1
+// Last Update 2018.11.15
 
 
 #ifndef ACCOUNT_HANDLER_H
 #define ACCOUNT_HANDLER_H
 
 #include "Account.h"
+
+enum AccountType { NORMAL = 1, CREDIT = 2 };
 
 class AccountHandler
 {
@@ -21,6 +23,9 @@ public:
 	void ShowAllAccount() const;
 
 private:
+	void MakeNormalAccount();
+	void MakeHighCreditAccount();
+
 	Account *arrAccount[ARR_MAX];
 	int accountCnt;
 };

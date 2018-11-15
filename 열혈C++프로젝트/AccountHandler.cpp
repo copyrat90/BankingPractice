@@ -1,10 +1,13 @@
 // AccountHandler Implementation
-// ver 0.4
-// Last Update 2018.11.6
+// ver 0.5
+// Last Update 2018.11.15
 
 
 #include "pch.h"
+
 #include "AccountHandler.h"
+#include "NormalAccount.h"
+#include "HighCreditAccount.h"
 
 
 AccountHandler::AccountHandler() : accountCnt(0) {}
@@ -30,11 +33,38 @@ void AccountHandler::ShowMenu() const
 
 void AccountHandler::MakeAccount()
 {
+	int choice;
+
+	std::cout << "[계좌종류선택]" << std::endl
+		<< "1. 보통예금계좌    2. 신용신뢰계좌" << std::endl;
+
+	while (true)
+	{
+		std::cout << "선택: ";
+		std::cin >> choice;
+
+		if (choice == NORMAL)
+		{
+			MakeNormalAccount();
+			break;
+		}
+		else if (choice == CREDIT)
+		{
+			MakeHighCreditAccount();
+			break;
+		}
+	}
+}
+
+
+void AccountHandler::MakeNormalAccount()
+{
 	int accountID;
 	char name[NAME_LEN];
 	int balance;
+	double ratioIn100;
 
-	std::cout << "[계좌개설]" << std::endl;
+	std::cout << "[보통예금계좌 개설]" << std::endl;
 
 	std::cout << "계좌ID: ";
 	std::cin >> accountID;
@@ -45,7 +75,39 @@ void AccountHandler::MakeAccount()
 	std::cout << "입금액: ";
 	std::cin >> balance;
 
-	arrAccount[accountCnt++] = new Account(accountID, name, balance);
+	std::cout << "이자율: ";
+	std::cin >> ratioIn100;
+
+	arrAccount[accountCnt++] = new NormalAccount(accountID, name, balance, ratioIn100 * 0.01);
+}
+
+
+void AccountHandler::MakeHighCreditAccount()
+{
+	int accountID;
+	char name[NAME_LEN];
+	int balance;
+	double ratioIn100;
+	int rating;
+
+	std::cout << "[신용신뢰계좌 개설]" << std::endl;
+
+	std::cout << "계좌ID: ";
+	std::cin >> accountID;
+
+	std::cout << "이  름: ";
+	std::cin >> name;
+
+	std::cout << "입금액: ";
+	std::cin >> balance;
+
+	std::cout << "이자율: ";
+	std::cin >> ratioIn100;
+
+	std::cout << "신용등급(1toA, 2toB, 3toC): ";
+	std::cin >> rating;
+
+	arrAccount[accountCnt++] = new HighCreditAccount(accountID, name, balance, ratioIn100 * 0.01, rating);
 }
 
 
