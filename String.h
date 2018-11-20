@@ -29,7 +29,7 @@ private:
 };
 
 ostream& operator <<(ostream&, const String &);
-istream& operator >>(istream&, const String &);
+istream& operator >>(istream&, String &);
 
 
 
