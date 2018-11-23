@@ -2,38 +2,51 @@
 using namespace std;
 
 #include "String.h"
-
+#include <cstring>
 
 int main(void)
-{
-	String testStr("Test");
-	cout << "testStr : " << testStr << " (" << testStr.length() << ")" << endl;
+{	
+	cout << "String str1;" << endl;
+	String str1;
+	cout << "str1 : " << str1 << endl << endl;
 	
-	cout << "strInput >> ";
-	String strInput;
-	cin >> strInput;
-	cout << "strInput : " << strInput << " (" << strInput.length() << ")" << endl;
+	cout << "String str2(\"abc\");" << endl;
+	String str2("abc");
+	cout << "str2 : " << str2 << endl << endl;
 	
-	if (testStr == strInput)
-		cout << "testStr == strInput" << endl;
-	else
-		cout << "testStr != strInput" << endl;
+	cout << "String str3(str2);" << endl;
+	String str3(str2);
+	cout << "str3 : " << str3 << endl << endl;
 	
-	cout << endl;
-	cout << "testStr = testStr + strInput;" << endl;
-	testStr = testStr + strInput;
-	cout << "testStr : " << testStr << " (" << testStr.length() << ")" << endl;
+	cout << "str1 = str2 + str3;" << endl;
+	str1 = str2 + str3;
+	cout << "str1 : " << str1 << endl << endl;
 	
-	if (testStr.length() > 0)
-	{
-		cout << "testStr[0] = '#';" << endl;
-		testStr[0] = '#';
-		cout << "testStr : " << testStr << " (" << testStr.length() << ")" << endl;
-	}
+	cout << "str1 += str2;" << endl;
+	str1 += str2;
+	cout << "str1 : " << str1 << endl;
+	cout << "str2 : " << str2 << endl;
+	cout << "str3 : " << str3 << endl << endl;
 	
-	cout << "String testStr2(testStr);" << endl;
-	String testStr2(testStr);
-	cout << "testStr2 : " << testStr2 << " (" << testStr2.length() << ")" << endl;
+	cout << "str2 == str3 : " << (str2 == str3 ? "true" : "false") << endl;
+	cout << "str1 == str2 : " << (str1 == str2 ? "true" : "false") << endl;
+	cout << "str1 > str2 : " << (str1 > str2 ? "true" : "false") << endl;
+	cout << "str2 > str3 : " << (str2 > str3 ? "true" : "false") << endl;
+	cout << "str2 < str1 : " << (str2 < str1 ? "true" : "false") << endl;
+	cout << "str1 < str2 : " << (str1 < str2 ? "true" : "false") << endl;
+	cout << "str2 >= str3 : " << (str2 >= str3 ? "true" : "false") << endl;
+	cout << "str2 >= str1 : " << (str2 >= str1 ? "true" : "false") << endl;
+	cout << "str2 <= str1 : " << (str2 <= str1 ? "true" : "false") << endl;
+	cout << "str1 <= str2 : " << (str1 <= str2 ? "true" : "false") << endl << endl;
 	
+	cout << "str3 입력 (" << STR_INPUT_MAX << "자 이내, 공백허용) : ";
+	cin >> str3;
+	cout << "str3 : " << str3 << endl;
+	cout << "str3.length() : " << str3.length() << endl << endl;
+	
+	cout << "str2[1] : " << str2[1] << endl << endl;
+	
+	cout << "str1.substring(1, 7) : " << str1.substring(1, 7) << endl;
+
 	return 0;
 }
