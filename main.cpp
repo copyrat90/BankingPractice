@@ -39,9 +39,9 @@ int main(void)
 	cout << "str2 <= str1 : " << (str2 <= str1 ? "true" : "false") << endl;
 	cout << "str1 <= str2 : " << (str1 <= str2 ? "true" : "false") << endl << endl;
 	
-	cout << "str3 입력 (" << STR_INPUT_MAX << "자 이내, 공백허용) : ";
+	cout << "input text for str3 (up to " << STR_INPUT_MAX << " characters, whitespace allowed)" << endl << ">> ";
 	cin >> str3;
-	cout << "str3 : " << str3 << endl;
+	cout << endl << "str3 : " << str3 << endl;
 	cout << "str3.length() : " << str3.length() << endl << endl;
 	
 	cout << "str2[1] : " << str2[1] << endl << endl;
