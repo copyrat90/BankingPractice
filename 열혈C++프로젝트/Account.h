@@ -1,5 +1,5 @@
 // Account class (Entity Class)
-// ver 0.6
+// ver 0.7
 // Last Update 2018.12.2
 
 
@@ -7,13 +7,12 @@
 #define ACCOUNT_H
 
 #include "pch.h"
+#include "String.h"
 
 class Account
 {
 public:
-	Account(int accountID, char* name, int balance = 0);
-	Account(const Account& other);
-	Account& operator =(const Account& other);
+	Account(int accountID, String name, int balance = 0);
 
 	virtual void ShowAccountInfo() const;
 
@@ -22,11 +21,9 @@ public:
 	virtual void Deposit(int value) { balance += value; }
 	bool Withdraw(int value);
 
-	virtual ~Account() { delete[] name;	}
-
 protected:
 	int accountID;
-	char *name;
+	String name;
 	int balance;
 };
 

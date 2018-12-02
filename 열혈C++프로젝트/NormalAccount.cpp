@@ -1,12 +1,12 @@
 // NormalAccount Implementation
-// ver 0.1
-// Last Update 2018.11.15
+// ver 0.2
+// Last Update 2018.12.2
 
 
 #include "pch.h"
 #include "NormalAccount.h"
 
-NormalAccount::NormalAccount(int accountID, char* name, int balance, double rate)
+NormalAccount::NormalAccount(int accountID, String name, int balance, double rate)
 	:Account(accountID, name, balance), interestRate(rate)
 { }
 

@@ -1,6 +1,6 @@
 // HighCreditAccount Implementation
-// ver 0.1
-// Last Update 2018.11.15
+// ver 0.2
+// Last Update 2018.12.2
 
 
 #include "pch.h"
@@ -10,7 +10,7 @@
 double crBonusRate[4] = { 0, 0.07, 0.04, 0.02 };
 
 
-HighCreditAccount::HighCreditAccount(int accountID, char* name, int balance, double rate, int cr)
+HighCreditAccount::HighCreditAccount(int accountID, String name, int balance, double rate, int cr)
 	:NormalAccount(accountID, name, balance, rate), creditRating(cr)
 { 
 	if (creditRating < A || creditRating > C)

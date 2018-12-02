@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "String.h"
 #include <cstring>
 
@@ -194,7 +195,7 @@ istream& operator >>(istream& is, String & s)
 		s.str = NULL;
 	else
 	{
-		s.str = new char[s.len];
+		s.str = new char[s.len + 1];
 		strcpy(s.str, szTemp);
 	}
 	return is;

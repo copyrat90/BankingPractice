@@ -1,6 +1,6 @@
 // NormalAccount class
-// ver 0.1
-// Last Update 2018.11.15
+// ver 0.2
+// Last Update 2018.12.2
 
 
 #ifndef NORMAL_ACCOUNT_H
@@ -11,7 +11,7 @@
 class NormalAccount : public Account
 {
 public:
-	NormalAccount(int accountID, char* name, int balance = 0, double rate = 0);
+	NormalAccount(int accountID, String name, int balance = 0, double rate = 0);
 	virtual void ShowAccountInfo() const;
 	virtual void Deposit(int value);
 protected:

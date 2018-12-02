@@ -1,5 +1,5 @@
 // Account class Implementation
-// ver 0.6
+// ver 0.7
 // Last Update 2018.12.2
 
 
@@ -7,36 +7,13 @@
 #include "Account.h"
 
 
-Account::Account(int accountID, char* name, int balance)
-	:accountID(accountID), balance(balance)
+Account::Account(int accountID, String name, int balance)
+	:accountID(accountID), balance(balance), name(name)
 {
 	if (balance < 0)
 	{
 		this->balance = 0;
 	}
-
-	this->name = new char[strlen(name) + 1];
-	strcpy_s(this->name, sizeof(char) * (strlen(name) + 1), name);
-}
-
-
-Account::Account(const Account& other)
-	:accountID(other.accountID), balance(other.balance)
-{
-	this->name = new char[strlen(other.name) + 1];
-	strcpy_s(this->name, sizeof(char)*(strlen(other.name) + 1), other.name);
-}
-
-
-Account& Account::operator =(const Account& other)
-{
-	delete[]name;
-	name = new char[strlen(other.name) + 1];
-	strcpy_s(name, sizeof(char)*(strlen(other.name) + 1), other.name);
-
-	accountID = other.accountID;
-	balance = other.balance;
-	return *this;
 }
 
 

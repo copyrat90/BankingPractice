@@ -60,7 +60,7 @@ void AccountHandler::MakeAccount()
 void AccountHandler::MakeNormalAccount()
 {
 	int accountID;
-	char name[NAME_LEN];
+	String name;
 	int balance;
 	double ratioIn100;
 
@@ -68,6 +68,8 @@ void AccountHandler::MakeNormalAccount()
 
 	std::cout << "°èÁÂID: ";
 	std::cin >> accountID;
+
+	std::cin.ignore(256, '\n');
 
 	std::cout << "ÀÌ  ¸§: ";
 	std::cin >> name;
@@ -85,7 +87,7 @@ void AccountHandler::MakeNormalAccount()
 void AccountHandler::MakeHighCreditAccount()
 {
 	int accountID;
-	char name[NAME_LEN];
+	String name;
 	int balance;
 	double ratioIn100;
 	int rating;
@@ -94,6 +96,8 @@ void AccountHandler::MakeHighCreditAccount()
 
 	std::cout << "°èÁÂID: ";
 	std::cin >> accountID;
+
+	std::cin.ignore(256, '\n');
 
 	std::cout << "ÀÌ  ¸§: ";
 	std::cin >> name;
