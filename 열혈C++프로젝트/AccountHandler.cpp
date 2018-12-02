@@ -1,6 +1,6 @@
 // AccountHandler Implementation
-// ver 0.5
-// Last Update 2018.11.15
+// ver 0.6
+// Last Update 2018.12.2
 
 
 #include "pch.h"
@@ -10,7 +10,7 @@
 #include "HighCreditAccount.h"
 
 
-AccountHandler::AccountHandler() : accountCnt(0) {}
+AccountHandler::AccountHandler() : accountCnt(0), arrAccount(ARR_MAX) {}
 
 
 AccountHandler::~AccountHandler()

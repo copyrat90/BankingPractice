@@ -1,6 +1,6 @@
 // Account class Implementation
-// ver 0.4
-// Last Update 2018.10.15
+// ver 0.6
+// Last Update 2018.12.2
 
 
 #include "pch.h"
@@ -25,6 +25,18 @@ Account::Account(const Account& other)
 {
 	this->name = new char[strlen(other.name) + 1];
 	strcpy_s(this->name, sizeof(char)*(strlen(other.name) + 1), other.name);
+}
+
+
+Account& Account::operator =(const Account& other)
+{
+	delete[]name;
+	name = new char[strlen(other.name) + 1];
+	strcpy_s(name, sizeof(char)*(strlen(other.name) + 1), other.name);
+
+	accountID = other.accountID;
+	balance = other.balance;
+	return *this;
 }
 
 
